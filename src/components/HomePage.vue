@@ -18,7 +18,7 @@
     <div id="navigation">
       <b-navbar centered>
         <template slot="start">
-          <b-navbar-item href="#"> Home </b-navbar-item>
+          <b-navbar-item href="HomePage.vue"> Home </b-navbar-item>
           <b-navbar-item href="#"> Post Recipes </b-navbar-item>
           <b-navbar-item href="#">
             My Recipe Box
@@ -34,49 +34,6 @@
           </p>
         </template>
       </b-navbar>
-    </div>
-
-    <div class="container" id="recipe">
-      <b-field label="Name of recipe" :label-position="labelPosition">
-        <b-input maxlength="50"></b-input>
-      </b-field>
-
-      <b-field label="Time needed" :label-position="labelPosition">
-        <b-input maxlength="50"></b-input>
-      </b-field>
-
-      <b-field label="Skill required" :label-position="labelPosition">
-        <b-select placeholder="">
-          <option value="1">Beginner</option>
-          <option value="2">Intermediate</option>
-          <option value="2">Expert</option>
-        </b-select>
-      </b-field>
-
-      <b-field label="Ingredients" :label-position="labelPosition">
-        <b-input maxlength="100" type="textarea"></b-input>
-      </b-field>
-
-      <b-field label="Instructions" :label-position="labelPosition">
-        <b-input maxlength="100" type="textarea"></b-input>
-      </b-field>
-
-      <b-field class="file is-primary" :class="{ 'has-name': !!file }">
-        <b-upload v-model="file" class="file-label">
-          <span class="file-cta">
-            <span class="file-label">Click to add image</span>
-          </span>
-          <span class="file-name" v-if="file">
-            {{ file.name }}
-          </span>
-        </b-upload>
-      </b-field>
-
-      <b-field id="post">
-        <p class="control">
-          <b-button type="is-success" outlined>Post recipe</b-button>
-        </p>
-      </b-field>
     </div>
 
     <div id="footer">
