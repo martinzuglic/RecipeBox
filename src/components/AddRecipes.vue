@@ -3,19 +3,12 @@
     <div id="header">
       <header class="header">
         <div class="content has-text-centered">
-          <img src="../assets/foodbox.png" />
           <h1>RecipeBox</h1>
-        </div>
-        <div class="buttons">
-          <a class="button is-success">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-success is-light"> Log in </a>
         </div>
       </header>
     </div>
 
-    <div id="navigation">
+    <div class="container">
       <b-navbar centered>
         <template slot="start">
           <b-navbar-item href="#"> Home </b-navbar-item>
@@ -36,48 +29,60 @@
       </b-navbar>
     </div>
 
-    <div class="container" id="recipe">
-      <b-field label="Name of recipe" :label-position="labelPosition">
-        <b-input maxlength="50"></b-input>
-      </b-field>
+    <section class="section">
+      <div class="columns" id="addrecipe">
+        <div class="column">
+          <!-- empty column -->
+        </div>
 
-      <b-field label="Time needed" :label-position="labelPosition">
-        <b-input maxlength="50"></b-input>
-      </b-field>
+        <div class="column" id="recipe">
+          <b-field label="Name of recipe" :label-position="labelPosition">
+            <b-input maxlength="50"></b-input>
+          </b-field>
 
-      <b-field label="Skill required" :label-position="labelPosition">
-        <b-select placeholder="">
-          <option value="1">Beginner</option>
-          <option value="2">Intermediate</option>
-          <option value="2">Expert</option>
-        </b-select>
-      </b-field>
+          <b-field label="Time needed" :label-position="labelPosition">
+            <b-input maxlength="50"></b-input>
+          </b-field>
 
-      <b-field label="Ingredients" :label-position="labelPosition">
-        <b-input maxlength="100" type="textarea"></b-input>
-      </b-field>
+          <b-field label="Skill required" :label-position="labelPosition">
+            <b-select placeholder="">
+              <option value="1">Beginner</option>
+              <option value="2">Intermediate</option>
+              <option value="2">Expert</option>
+            </b-select>
+          </b-field>
 
-      <b-field label="Instructions" :label-position="labelPosition">
-        <b-input maxlength="100" type="textarea"></b-input>
-      </b-field>
+          <b-field label="Ingredients" :label-position="labelPosition">
+            <b-input maxlength="100" type="textarea"></b-input>
+          </b-field>
 
-      <b-field class="file is-primary" :class="{ 'has-name': !!file }">
-        <b-upload v-model="file" class="file-label">
-          <span class="file-cta">
-            <span class="file-label">Click to add image</span>
-          </span>
-          <span class="file-name" v-if="file">
-            {{ file.name }}
-          </span>
-        </b-upload>
-      </b-field>
+          <b-field label="Instructions" :label-position="labelPosition">
+            <b-input maxlength="100" type="textarea"></b-input>
+          </b-field>
 
-      <b-field id="post">
-        <p class="control">
-          <b-button type="is-success" outlined>Post recipe</b-button>
-        </p>
-      </b-field>
-    </div>
+          <b-field class="file is-primary" :class="{ 'has-name': !!file }">
+            <b-upload v-model="file" class="file-label">
+              <span class="file-cta">
+                <span class="file-label">Click to add image</span>
+              </span>
+              <span class="file-name" v-if="file">
+                {{ file.name }}
+              </span>
+            </b-upload>
+          </b-field>
+
+          <b-field id="post">
+            <p class="control">
+              <b-button type="is-dark" outlined>Post recipe</b-button>
+            </p>
+          </b-field>
+        </div>
+
+        <div class="column">
+          <!-- empty column -->
+        </div>
+      </div>
+    </section>
 
     <div id="footer">
       <footer class="footer">
@@ -93,7 +98,7 @@
 export default {
   data() {
     return {
-      labelPosition: "on-border",
+      labelPosition: "inside",
       file: null,
     };
   },
@@ -102,47 +107,52 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#recipe {
-  width: 30%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+section {
+  background-image: url("../assets/cookbook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#recipe #post {
-  margin-top: 40px;
+#addrecipe {
+  margin-top: 10px;
 }
-header img {
-  height: 100px;
-  margin-bottom: -50px;
+
+#recipe {
+  color: white;
 }
 
 header {
-  background-color: #48c774;
+  background-image: url("../assets/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 3px;
+  height: 180px;
 }
 
 header h1 {
   font-size: 40px;
   font-family: "Times New Roman", Times, serif;
-  color: #414241;
+  color: #effaf3;
 }
 
 footer {
+  background-image: url("../assets/footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  margin-top: 20px;
-  color: #414241;
-  background-color: #effaf3;
-  font-size: 20px;
+  height: 180px;
+  color: white;
+  font-size: 40px;
   font-family: "Times New Roman", Times, serif;
-}
-
-#navigation {
-  margin-top: 20px;
 }
 
 #navigation button {
   margin-left: 10px;
+}
+
+#navigation {
+  background-color: darksalmon;
 }
 </style>
