@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <AddRecipes />
+    <Navigation />
+    <router-view />
   </div>
 </template>
 
 <script>
-import AddRecipes from "./components/AddRecipes.vue";
+import Navigation from "./components/Navigation.vue";
 
 export default {
   name: "App",
   components: {
-    AddRecipes,
+    Navigation,
   },
   data() {
     return {};

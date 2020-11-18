@@ -1,34 +1,5 @@
 <template>
   <div class="page">
-    <div id="header">
-      <header class="header">
-        <div class="content has-text-centered">
-          <h1>RecipeBox</h1>
-        </div>
-      </header>
-    </div>
-
-    <div class="container">
-      <b-navbar centered>
-        <template slot="start">
-          <b-navbar-item href="#"> Home </b-navbar-item>
-          <b-navbar-item href="#"> Post Recipes </b-navbar-item>
-          <b-navbar-item href="#">
-            My Recipe Box
-            <img src="../assets/boxicon.png" />
-          </b-navbar-item>
-        </template>
-
-        <template slot="start">
-          <b-input placeholder="Search recipes..." type="search" icon="magnify">
-          </b-input>
-          <p class="control">
-            <b-button type="is-success" outlined>Search</b-button>
-          </p>
-        </template>
-      </b-navbar>
-    </div>
-
     <section class="section">
       <div class="columns" id="addrecipe">
         <div class="column">
@@ -83,19 +54,18 @@
         </div>
       </div>
     </section>
-
-    <div id="footer">
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p>RecipeBox</p>
-        </div>
-      </footer>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "./Footer.vue";
+
 export default {
+  name: "AddRecipes",
+  components: {
+    Footer,
+  },
   data() {
     return {
       labelPosition: "inside",
@@ -111,6 +81,7 @@ section {
   background-image: url("../assets/cookbook.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 1000px;
 }
 
 #addrecipe {
@@ -119,40 +90,5 @@ section {
 
 #recipe {
   color: white;
-}
-
-header {
-  background-image: url("../assets/header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 3px;
-  height: 180px;
-}
-
-header h1 {
-  font-size: 40px;
-  font-family: "Times New Roman", Times, serif;
-  color: #effaf3;
-}
-
-footer {
-  background-image: url("../assets/footer.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 180px;
-  color: white;
-  font-size: 40px;
-  font-family: "Times New Roman", Times, serif;
-}
-
-#navigation button {
-  margin-left: 10px;
-}
-
-#navigation {
-  background-color: darksalmon;
 }
 </style>
