@@ -20,9 +20,6 @@ export default {
   components: {
     Footer,
   },
-  props: {
-    msg: String,
-  },
 };
 </script>
 
