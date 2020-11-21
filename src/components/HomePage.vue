@@ -2,7 +2,7 @@
   <div class="hello">
     <section class="section">
       <h1>Welcome to Recipe Box!</h1>
-      <p>Search, create and add recipes to your personal box.</p>
+      <p>Create and add your favourite recipes to your personal box.</p>
       <div class="buttons">
         <b-button type="is-dark is-large">Sign up</b-button>
         <b-button type="is-light is-large">Log in</b-button>

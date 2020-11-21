@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section">
-      <h1>Moji recepti:</h1>
+      <h1>My recipes:</h1>
     </section>
     <Footer />
   </div>
