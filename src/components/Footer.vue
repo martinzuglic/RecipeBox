@@ -29,5 +29,6 @@ export default {
   height: 100px;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
+  margin-top: 3px;
 }
 </style>

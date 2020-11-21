@@ -8,11 +8,11 @@
 
         <div class="column" id="recipe">
           <b-field label="Name of recipe" :label-position="labelPosition">
-            <b-input maxlength="50"></b-input>
+            <b-input minlength="5" maxlength="50"></b-input>
           </b-field>
 
           <b-field label="Time needed" :label-position="labelPosition">
-            <b-input maxlength="50"></b-input>
+            <b-input minlength="2" maxlength="50"></b-input>
           </b-field>
 
           <b-field label="Skill required" :label-position="labelPosition">
@@ -24,27 +24,16 @@
           </b-field>
 
           <b-field label="Ingredients" :label-position="labelPosition">
-            <b-input maxlength="100" type="textarea"></b-input>
+            <b-input minlength="2" maxlength="100" type="textarea"></b-input>
           </b-field>
 
           <b-field label="Instructions" :label-position="labelPosition">
-            <b-input maxlength="100" type="textarea"></b-input>
-          </b-field>
-
-          <b-field class="file is-primary" :class="{ 'has-name': !!file }">
-            <b-upload v-model="file" class="file-label">
-              <span class="file-cta">
-                <span class="file-label">Click to add image</span>
-              </span>
-              <span class="file-name" v-if="file">
-                {{ file.name }}
-              </span>
-            </b-upload>
+            <b-input minlength="5" maxlength="100" type="textarea"></b-input>
           </b-field>
 
           <b-field id="post">
             <p class="control">
-              <b-button type="is-dark" outlined>Post recipe</b-button>
+              <b-button type="is-dark">Add recipe to box</b-button>
             </p>
           </b-field>
         </div>
@@ -78,7 +67,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 section {
-  background-image: url("../assets/cookbook.jpg");
+  background-image: url("../assets/background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 1000px;

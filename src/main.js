@@ -6,6 +6,7 @@ import 'buefy/dist/buefy.css'
 
 import HomePage from "./components/HomePage.vue";
 import AddRecipes from "./components/AddRecipes.vue";
+import RecipeBox from "./components/RecipeBox.vue";
 
 Vue.use(Buefy)
 Vue.use(VueRouter);
@@ -18,6 +19,10 @@ const routes = [
   {
     path: "/addrecipes",
     component: AddRecipes
+  },
+  {
+    path: "/recipebox",
+    component: RecipeBox
   }
 ];
 
