@@ -4,9 +4,43 @@
       <h1>Welcome to Recipe Box!</h1>
       <p>Create and add your favourite recipes to your personal box.</p>
       <div class="buttons">
-        <b-button type="is-dark is-large">Sign up</b-button>
-        <b-button type="is-light is-large">Log in</b-button>
+        <b-button
+          type="button is-dark is-large"
+          @click="isCardModalActive = true"
+        >
+          Sign up
+        </b-button>
+        <b-button
+          type="button is-light is-large"
+          @click="isComponentModalActive = true"
+        >
+          Login
+        </b-button>
       </div>
+      <b-modal
+        custom-class="modal"
+        v-model="isCardModalActive"
+        has-modal-card
+        trap-focus
+        aria-role="dialog"
+        aria-modal
+      >
+        <template>
+          <Register />
+        </template>
+      </b-modal>
+      <b-modal
+        custom-class="modal"
+        v-model="isComponentModalActive"
+        has-modal-card
+        trap-focus
+        aria-role="dialog"
+        aria-modal
+      >
+        <template>
+          <Login />
+        </template>
+      </b-modal>
     </section>
     <Footer />
   </div>
@@ -14,11 +48,21 @@
 
 <script>
 import Footer from "./Footer.vue";
+import Login from "./Login.vue";
+import Register from "./Register.vue";
 
 export default {
   name: "HomePage",
+  data() {
+    return {
+      isComponentModalActive: false,
+      isCardModalActive: false,
+    };
+  },
   components: {
     Footer,
+    Login,
+    Register,
   },
 };
 </script>
