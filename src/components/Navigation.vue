@@ -2,7 +2,6 @@
   <b-navbar centered spaced type="is-dark">
     <template slot="start">
       <b-navbar-item href="/"> Home </b-navbar-item>
-      <b-navbar-item href="/addrecipes"> Add recipe </b-navbar-item>
       <b-navbar-item href="/recipebox"> My box </b-navbar-item>
     </template>
   </b-navbar>
