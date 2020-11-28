@@ -7,6 +7,8 @@ import 'buefy/dist/buefy.css'
 import HomePage from "./components/HomePage.vue";
 import AddRecipes from "./components/AddRecipes.vue";
 import RecipeBox from "./components/RecipeBox.vue";
+import Login from "./components/Login.vue";
+import Register from "./components/Register.vue";
 
 Vue.use(Buefy)
 Vue.use(VueRouter);
@@ -23,7 +25,15 @@ const routes = [
   {
     path: "/recipebox",
     component: RecipeBox
-  }
+  },
+  {
+    path: "/login",
+    component: Login
+  },
+  {
+    path: "/register",
+    component: Register
+  },
 ];
 
 const router = new VueRouter({
