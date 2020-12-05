@@ -13,8 +13,9 @@
       <div class="container">
         <b-table :data="data">
           <b-table-column label="Name of recipe" centered v-slot="name">
-            <b-button type="is-text">{{ name.row.name }}</b-button>
-            <!-- Need on click show whole recipe -->
+            <b-button type="is-text" @click="isCardModalActive = true">{{
+              name.row.name
+            }}</b-button>
           </b-table-column>
           <b-table-column label="Time needed" v-slot="time">
             {{ time.row.time }}
@@ -36,6 +37,35 @@
       >
         <template>
           <AddRecipes @updated="handleUpdate" />
+        </template>
+      </b-modal>
+
+      <b-modal
+        custom-class="modal"
+        v-model="isCardModalActive"
+        has-modal-card
+        trap-focus
+        aria-role="dialog"
+        aria-modal
+      >
+        <template>
+          <b-table :data="data">
+            <b-table-column label="Name of recipe" centered v-slot="name">
+              {{ name.row.name }}
+            </b-table-column>
+            <b-table-column label="Time needed" centered v-slot="time">
+              {{ time.row.time }}
+            </b-table-column>
+            <b-table-column label="Skill required" centered v-slot="skill">
+              {{ skill.row.skill }}
+            </b-table-column>
+            <b-table-column label="Ingredients" centered v-slot="ingredients">
+              {{ ingredients.row.ingredients }}
+            </b-table-column>
+            <b-table-column label="Instructions" centered v-slot="instructions">
+              {{ instructions.row.instructions }}
+            </b-table-column>
+          </b-table>
         </template>
       </b-modal>
     </section>
@@ -63,6 +93,7 @@ export default {
   data() {
     return {
       isComponentModalActive: false,
+      isCardModalActive: false,
       data: [],
       /*columns: [
         {
